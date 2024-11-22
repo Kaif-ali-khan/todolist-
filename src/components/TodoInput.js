@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-const TodoInput = (props) => {
+const TodoInput = ({addList}) => {
   const [inputText, setInputText] = useState("");
   const handleEnterPress = (e)=>{
     if(e.keyCode===13){
-        props.addList(inputText)
+        addList(inputText)
         setInputText("")
     }
   }  
@@ -23,7 +23,7 @@ const TodoInput = (props) => {
       <button
         className="add-btn"
         onClick={() => {
-          props.addList(inputText);
+          addList(inputText);
           setInputText("");
         }}
       >
